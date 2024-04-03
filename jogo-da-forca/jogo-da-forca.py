@@ -1,9 +1,5 @@
-#Altere o Programa 7.2 o jogo da forca, Utilize um arquivo em que uma palalvras seja  gravado a cada linha 
-#use um editor de texto para gerar o arquivo. ao inicia o programa, utilize esse aquivo para carrega 
-#(ler) a lista de palavras. Experimente tambem pergunta o nome do jogador r gera um arquivo com o numero
-#de acertos dos cinco melhores .
-#jogo da forca 
 import random 
+import datetime
 
 def escolhePala(arquivo):
     cont = 0
@@ -56,9 +52,10 @@ def boneco(erros):
         return "voce foi enforcado"
     
 def salvaJogador(nome,erro, acerto):
+    dataAtual = datetime.date.today()
     with open ("topjogadores.txt", "a") as top:
         top.write("jogador,erros, acerto ")
-        top.write(nome,erro,acerto)    
+        top.write(f'Nome do Jogador:{nome} Erro:{erro} Acertos:{acerto} Data{dataAtual}')    
 
  
 
